@@ -1,0 +1,172 @@
+<html>
+<head>
+<link rel="stylesheet" href="style1.css">
+<script type="text/javascript">
+function check(f) {
+	blank=false;
+	for (i=0; i<f.elements.length;i++) {
+		if (f.elements[i].value=="")
+			if (f.elements[i].name != "large") 
+				blank= true;
+		}
+	if (blank==true) 
+		alert("모든 항목을 입력하셔야 합니다.");
+	else
+		f.submit();
+}
+</script> 
+</head>
+<body>
+    <header>
+      <div id="logo">     
+        <a href="main.html">
+        <h1>DaMall</h1>
+        </a>
+      </div>
+      <nav>
+      	<ul id="topMenu">
+				<li><a href="#">회원 메뉴<span>▼</span></a>
+            <ul>
+              <li><a href="signup.jsp">회원가입</a></li>
+              <li><a href="login.jsp">로그인</a></li>
+            </ul>
+          </li>
+              	<li><a href="product_write.html">상품 등록하기</a></li>
+				<li><a href="shop_list.jsp">쇼핑하기</a></li>
+				<li><a href="product_list.jsp">전체 상품 보기</a></li>
+			</ul>
+		</nav>
+		</header>
+<main>
+	Home > 상품 등록하기
+	<hr>
+<form method=post action="product_save.jsp" enctype="multipart/form-data" style="margin:auto">
+<table border=0 width=300 style="margin:auto">
+ <tr>
+  <th bgcolor=#dfedff colspan=2>
+   <font size=+1 color=black> 상품 올리기</font></th>
+ </tr>
+ <tr>
+  <th width=20% bgcolor=#dfedff>
+   <font size=-1 color=black> 작성자</font></th>
+  <td bgcolor=#eeeeee> <input type=text name=wname size=20>
+  </td>
+ </tr>
+ <tr>
+  <th width=20% bgcolor=#dfedff>
+   <font size=-1 color=black>상품 분류</font></th>
+  <td bgcolor=#eeeeee>
+   <font size=-1  color=white>
+    <select name=category size=1>
+     <option value=11>가구
+     <option value=22>전기/전자
+     <option value=33>부엌용품
+     <option value=44>의류
+     <option value=55>보석 및 악세서리
+     <option value=66>헬스기구
+     <option value=77>컴퓨터 관련
+     <option value=88>기타 
+    </select>
+   </font>
+  </td>
+ </tr>
+ <tr>
+  <th width=20% bgcolor=#dfedff>
+   <font size=-1 color=black>상품명</font></th>
+  <td bgcolor=#eeeeee>
+   <input type=text name=pname size=30>
+  </td>
+ </tr>
+ <tr>
+  <th width=20% bgcolor=#dfedff>
+   <font size=-1 color=black>제조원</font></th>
+  <td bgcolor=#eeeeee>
+   <input type=text name=sname size=30>
+  </td>
+ </tr>
+ <tr>
+  <th width=20% bgcolor=#dfedff>
+   <font size=-1 color=black>시중가</font>
+  </th>
+  <td bgcolor=#eeeeee>
+   <input type=text name=price size=10>
+  </td>
+ </tr>
+ <tr>
+  <th width=20% bgcolor=#dfedff>
+   <font size=-1 color=black>판매가</font>
+  </th>
+  <td bgcolor=#eeeeee>
+   <input type=text name=dprice size=10>
+  </td>
+ </tr>
+ <tr>
+  <th width=20% bgcolor=#dfedff>
+   <font size=-1 color=black>입고 수량</font>
+  </th>
+  <td bgcolor=#eeeeee>
+   <input type=text name=stock size=10>
+  </td>
+ </tr>
+ <tr>
+  <th width=20% bgcolor=#dfedff>
+   <font size=-1 color=black>작은 이미지</font>
+  </th>
+  <td bgcolor=#eeeeee>
+   <input type=file name=small size=30>
+  </td>
+ </tr>
+ <tr>
+  <th width=20% bgcolor=#dfedff>
+   <font size=-1 color=black>큰 이미지</font>
+  </th>
+  <td bgcolor=#eeeeee>
+   <input type=file name=large size=30>
+  </td>
+ </tr>
+ <tr>
+  <th bgcolor=#dfedff>
+   <font size=-1 color=black> 상품 내용</font>
+  </th>
+  <td bgcolor=#eeeeee>
+  </td>
+ </tr>
+ <tr>
+  <td colspan=2>
+   <textarea name=description cols=70 rows=5></textarea>
+  </td>
+ </tr>
+ <tr>
+  <td colspan=2>
+  <div style="text-align:center">
+   <input type=button value=" 저장 " onclick="check(this.form)" >
+   <input type=reset value=" 다시쓰기 " >
+   </div>
+  </td>
+ </tr>
+</table>
+</form>
+</main>
+<footer>
+    <div id="bottomMenu">
+    	<ul>
+          <li><a href="#">회사 소개</a></li>
+          <li><a href="#">개인정보처리방침</a></li>
+          <li><a href="#">여행약관</a></li>
+          <li><a href="#">사이트맵</a></li>
+        </ul>
+    <div id="sns">
+          <ul>
+            <li><a href="#"><img src="images/sns-1.png"></a></li>
+            <li><a href="#"><img src="images/sns-2.png"></a></li>
+            <li><a href="#"><img src="images/sns-3.png"></a></li>
+          </ul>
+        </div>
+      </div> 
+		<div id="company">
+        	<p>인천시 미추홀구 주안로 100로 Tel) 032-458-3254 관리자 : 김우혁<br></p>
+        	<p>이메일 : admall@damall.com</p> 
+      	</div>  
+</footer>
+</body>
+</html>
